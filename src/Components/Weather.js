@@ -5,7 +5,7 @@ import Sun from '../Asset/weather-icon/sun.png'
 import Rain from '../Asset/weather-icon/rain.png'
 
 const Weather = (props) => {
-const {description, forecast, temperature, wind} = props
+const {description, forecast, temperature, wind, nameCity} = props
   return (
     <WeatherWrapper>
       <WeatherList>

@@ -11,20 +11,19 @@ const MainPage = () => {
   const [takeDefaultWeather, setTakeDefaultWeather] = React.useState([]);
   const [isLoading, setIsLoading] = React.useState(true);
   const defaultCity = weatherInput.toUpperCase();
-  
+  const cityDefault = 'Jakarta'
   
   const fetchingApi = () => {
   axios(`https://goweather.herokuapp.com/weather/${defaultCity}`)
     .then((res) => {
     console.log(res.data)
     setTakeWeather(res.data)
-    setIsLoading(false)
    
   })
     .catch((err) => console.log(err))
   }
   const fetchingApiDefault = (e) => {
-  axios(`https://goweather.herokuapp.com/weather/Jakarta`)
+  axios(`https://goweather.herokuapp.com/weather/${cityDefault}`)
     .then((res) => {
     console.log(res.data)
     setTakeDefaultWeather(res.data)    
@@ -61,8 +60,8 @@ const MainPage = () => {
     }}>Submit</Button> 
     </WeatherForm>   
     {!defaultCity ?  
-    <WeatherDefault description={takeDefaultWeather.description} forecast={takeDefaultWeather.forecast} temperature={takeDefaultWeather.temperature} wind={takeDefaultWeather.wind}/>
-    : <Weather description={takeWeather.description} forecast={takeWeather.forecast} temperature={takeWeather.temperature} wind={takeWeather.wind}/>
+    <WeatherDefault nameCity={cityDefault} description={takeDefaultWeather.description} forecast={takeDefaultWeather.forecast} temperature={takeDefaultWeather.temperature} wind={takeDefaultWeather.wind}/>
+    : <Weather nameCity={defaultCity} description={takeWeather.description} forecast={takeWeather.forecast} temperature={takeWeather.temperature} wind={takeWeather.wind}/>
     }
     </Wrapper>
     </>

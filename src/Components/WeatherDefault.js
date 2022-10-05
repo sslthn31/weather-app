@@ -1,11 +1,14 @@
 import React from 'react'
-import { WeatherWrapper, WeatherList, WeatherDayList } from './StyledComponents'
+import { WeatherWrapper, WeatherList, WeatherDayList, Temperature } from './StyledComponents'
 import Cloudy from '../Asset/weather-icon/cloudy.png'
 import Sun from '../Asset/weather-icon/sun.png'
 import Rain from '../Asset/weather-icon/rain.png'
+import Moment from 'moment';
 
 const Weather = (props) => {
-const {description, forecast, temperature, wind} = props
+// const moment = Moment();
+
+const {description, forecast, temperature, wind, nameCity} = props
   return (
     <WeatherWrapper>
       <WeatherList>
@@ -19,16 +22,16 @@ const {description, forecast, temperature, wind} = props
         }}
         />
       }
-       <h3>{description}</h3>
-        {/* <p>{temperature}</p> */}
+       <h2>{nameCity} - {description}</h2>
         {/* <p>{wind}</p> */}
       </WeatherList>
+        <Temperature style={{textAlign: 'center'}}>{temperature}</Temperature>
       <WeatherDayList>
         {forecast == null ? null : 
         forecast.map((data) => {
           return(
             <div className="forecast">
-              <p>{data.day}</p>
+              {/* <p>{data.day}</p> */}
               <p>{data.temperature}</p>
               <p>{data.wind}</p>
             </div>  

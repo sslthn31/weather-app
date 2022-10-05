@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   padding: 1.5rem 0;
   width: 500px;
-  height: 100vh;
+  height: 110vh;
   background: #AA076B;  /* fallback for old browsers */
 background: -webkit-linear-gradient(to right, #61045F, #AA076B);  /* Chrome 10-25, Safari 5.1-6 */
 background: linear-gradient(to right, #61045F, #AA076B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -18,7 +18,7 @@ justify-content: space-between;
 align-items: center;
 margin-bottom: 1.5rem;
 @media (max-width: 600px) {
-  padding: 0 10px;
+  padding: 0 1rem;
 }
 `
 export const WeatherWrapper = styled.section`

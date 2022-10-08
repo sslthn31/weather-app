@@ -22,7 +22,7 @@ const {description, forecast, temperature, wind, nameCity} = props
         }}
         />
       }
-       <h2>{nameCity} - {description}</h2>
+       <h2>{description}</h2>
         {/* <p>{wind}</p> */}
       </WeatherList>
         <Temperature style={{textAlign: 'center'}}>{temperature}</Temperature>
